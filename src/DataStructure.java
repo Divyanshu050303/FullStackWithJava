@@ -123,14 +123,53 @@ public class DataStructure {
         list.add(4003);
         list.add(5003);
 
-        Iterator listIte=list.iterator();
-        while (listIte.hasNext()){
-            System.out.println(listIte.next());
-        }
+//        Iterator listIte=list.iterator();
+//        while (listIte.hasNext()){
+//            System.out.println(listIte.next());
+//        }
         ListIterator time =list.listIterator();
+        while (time.hasNext()){
+            System.out.println(time.next());
+        }
+        System.out.println("previous order");
+        while (time.hasPrevious()){
+            System.out.println(time.previous());
+        }
 
+        /*
+        *                      List                                                            set
+        *               Duplicate value                                                     Unique value
+        *               Insertion Order                                                    No Insertion Oder
+        *               multiple null value                                                single null value
+        *                                                                                       HashCode
+        * */
 
-
+        /*
+        * Cursors:
+        * - if we want to fetch the value one by one we used this cursors
+        * -type
+        * -1 Iterator
+        * -2 list Iterator
+        * -3 Enumeration
+        *
+        * *-1 Iterator -> hasNext() next() in the forward direction
+        * *-2 list Iterator -> hasNext() next() hasPrevious() Previous() in both direction forward and backward
+        * *-Enumeration -> elements() used with vector and stack
+        *
+        * */
+        System.out.println("List");
+        ArrayList item=new ArrayList<>();
+        item.add("b");
+        item.add("c");
+        item.add("d");
+        item.add("b78");
+        ListIterator list1= item.listIterator();
+        while (list1.hasNext()){
+            list1.next();
+        }
+        while (list1.hasPrevious()){
+            System.out.println(list1.previous());
+        }
 
 
     }
